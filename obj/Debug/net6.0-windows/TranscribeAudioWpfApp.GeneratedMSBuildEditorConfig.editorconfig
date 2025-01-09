@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TranscribeAudioWpfApp
-build_property.ProjectDir = D:\Developer\CSharp\projects\WPF\TranscribeAudioWpfApp\
+build_property.ProjectDir = D:\Developer\CSharp\products\wpfAppTranscribeAudio\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
