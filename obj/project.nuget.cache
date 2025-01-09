@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "TtGVGx89qlM=",
+  "dgSpecHash": "7VSvV2rKHus=",
   "success": true,
-  "projectFilePath": "D:\\Developer\\CSharp\\projects\\WPF\\TranscribeAudioWpfApp\\TranscribeAudioWpfApp.csproj",
+  "projectFilePath": "D:\\Developer\\CSharp\\products\\wpfAppTranscribeAudio\\TranscribeAudioWpfApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pablo\\.nuget\\packages\\microsoft.cognitiveservices.speech\\1.35.0\\microsoft.cognitiveservices.speech.1.35.0.nupkg.sha512",
     "C:\\Users\\pablo\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

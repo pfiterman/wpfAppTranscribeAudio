@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TranscribeAudioWpfApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cf9534ee45a1136312b175355753f71d05679593")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7afbd5ee3b2353aca8e7d5806cd073a7b3a7868b")]
 [assembly: System.Reflection.AssemblyProductAttribute("TranscribeAudioWpfApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TranscribeAudioWpfApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
