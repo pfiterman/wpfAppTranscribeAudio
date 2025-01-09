@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Developer\\CSharp\\projects\\WPF\\TranscribeAudioWpfApp\\TranscribeAudioWpfApp.csproj": {}
+    "D:\\Developer\\CSharp\\products\\wpfAppTranscribeAudio\\TranscribeAudioWpfApp.csproj": {}
   },
   "projects": {
-    "D:\\Developer\\CSharp\\projects\\WPF\\TranscribeAudioWpfApp\\TranscribeAudioWpfApp.csproj": {
+    "D:\\Developer\\CSharp\\products\\wpfAppTranscribeAudio\\TranscribeAudioWpfApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Developer\\CSharp\\projects\\WPF\\TranscribeAudioWpfApp\\TranscribeAudioWpfApp.csproj",
+        "projectUniqueName": "D:\\Developer\\CSharp\\products\\wpfAppTranscribeAudio\\TranscribeAudioWpfApp.csproj",
         "projectName": "TranscribeAudioWpfApp",
-        "projectPath": "D:\\Developer\\CSharp\\projects\\WPF\\TranscribeAudioWpfApp\\TranscribeAudioWpfApp.csproj",
+        "projectPath": "D:\\Developer\\CSharp\\products\\wpfAppTranscribeAudio\\TranscribeAudioWpfApp.csproj",
         "packagesPath": "C:\\Users\\pablo\\.nuget\\packages\\",
-        "outputPath": "D:\\Developer\\CSharp\\projects\\WPF\\TranscribeAudioWpfApp\\obj\\",
+        "outputPath": "D:\\Developer\\CSharp\\products\\wpfAppTranscribeAudio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
