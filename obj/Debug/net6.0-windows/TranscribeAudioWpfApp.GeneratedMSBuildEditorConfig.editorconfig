@@ -17,3 +17,6 @@ build_property.RootNamespace = TranscribeAudioWpfApp
 build_property.ProjectDir = D:\Developer\CSharp\products\wpfAppTranscribeAudio\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 6.0
+build_property.EnableCodeStyleSeverity = 

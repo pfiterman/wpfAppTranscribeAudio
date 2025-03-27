@@ -26,9 +26,67 @@ namespace TranscribeAudio
             }
         }
 
+        private void LoadComboRecognitionLanguages()
+        {
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("Danish - Denmark", "da-DK"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("German - Germany", "de-DE"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("English - Australia", "en-AU"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("English - Canada", "en-CA"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("English - Great Britain", "en-GB"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("English - Hong Kong", "en-HK"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("English - Ireland", "en-IE"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("English - India", "en-IN"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("English - Nigeria", "en-NG"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("English - New Zealand", "en-NZ"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("English - Philippines", "en-PH"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("English - Singapore", "en-SG"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("English - United States", "en-US"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("Spanish - Spain", "es-ES"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("Spanish - Mexico", "es-MX"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("Finnish - Finland", "fi-FI"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("French - Canada", "fr-CA"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("French - France", "fr-FR"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("Hindi - India", "hi-IN"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("Italian - Italy", "it-IT"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("Japanese - Japan", "ja-JP"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("Korean - South Korea", "ko-KR"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("Norwegian - Norway", "nb-NO"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("Dutch - Netherlands", "nl-NL"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("Polish - Poland", "pl-PL"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("Portuguese - Brazil", "pt-BR"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("Portuguese - Portugal", "pt-PT"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("Swedish - Sweden", "sv-SE"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("Turkish - Turkey", "tr-TR"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("Chinese - China", "zh-CN"));
+            CbRecognitionLanguage.Items.Add(new RecognitionLanguageItem("Chinese - Hong Kong", "zh-HK"));
+        }
+
+        private void LoadComboTranscribeMode()
+        {
+            CbTranscribeMode.Items.Add("Continuous Recognition");
+            CbTranscribeMode.Items.Add("Diarization");
+            CbTranscribeMode.Items.Add("Single - Shot");
+
+        }   
+
+        private void SelectRecognitionLanguageItem(string displayName)
+        {
+            foreach (var item in CbRecognitionLanguage.Items)
+            {
+              if (item is RecognitionLanguageItem recognitionLanguageItem &&  recognitionLanguageItem.DisplayName == displayName )
+                {
+                    CbRecognitionLanguage.SelectedItem = item;
+                    break;
+                }
+            }
+        }
+
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            CbOptionTranscribeAudio.SelectedIndex = 1;
+            LoadComboRecognitionLanguages();
+            LoadComboTranscribeMode();
+            SelectRecognitionLanguageItem("English - Canada");
+            CbTranscribeMode.SelectedItem = "Continuous Recognition";
             TxtFileSavingFolder.Text = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
         }
 
@@ -105,14 +163,18 @@ namespace TranscribeAudio
 
         private async void BtnTranscribeAudio_Click(object sender, EventArgs e)
         {
-            // Disabling and Enabling warning message Converting null literal or possible null value to non-nullable type.
-            #pragma warning disable CS8600
+            if (Environment.GetEnvironmentVariable("SPEECH_KEY") == null || Environment.GetEnvironmentVariable("SPEECH_REGION") == null)
+            {
+                MessageBox.Show("Please set the environment variables SPEECH_KEY and SPEECH_REGION.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             string speechKey = Environment.GetEnvironmentVariable("SPEECH_KEY");
             string speechRegion = Environment.GetEnvironmentVariable("SPEECH_REGION");
-            #pragma warning restore CS8600
 
             var speechConfig = SpeechConfig.FromSubscription(speechKey, speechRegion);
-            speechConfig.SpeechRecognitionLanguage = CbRecognitionLanguage.SelectedItem.ToString();
+
+            speechConfig.SpeechRecognitionLanguage = ((RecognitionLanguageItem)CbRecognitionLanguage.SelectedItem).LanguageCode;
 
             if (CheckRequiredFields())
             {
