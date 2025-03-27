@@ -165,15 +165,11 @@
             // 
             // CbRecognitionLanguage
             // 
-            CbRecognitionLanguage.DisplayMember = "en-CA";
             CbRecognitionLanguage.FormattingEnabled = true;
-            CbRecognitionLanguage.Items.AddRange(new object[] { "da-DK", "de-DE", "en-AU", "en-CA", "en-GB", "en-HK", "en-IE", "en-IN", "en-NG", "en-NZ", "en-PH", "en-SG", "en-US", "es-ES", "es-MX", "fi-FI", "fr-CA", "fr-FR", "hi-IN", "it-IT", "ja-JP", "ko-KR", "nb-NO", "nl-NL", "pl-PL", "pt-BR", "pt-PT", "sv-SE", "tr-TR", "zh-CN", "zh-HK" });
             CbRecognitionLanguage.Location = new Point(231, 155);
             CbRecognitionLanguage.Name = "CbRecognitionLanguage";
-            CbRecognitionLanguage.Size = new Size(137, 23);
+            CbRecognitionLanguage.Size = new Size(172, 23);
             CbRecognitionLanguage.TabIndex = 27;
-            CbRecognitionLanguage.Text = "en-US";
-            CbRecognitionLanguage.ValueMember = "en-CA";
             // 
             // GbStatistics
             // 
@@ -244,15 +240,11 @@
             // 
             // CbTranscribeMode
             // 
-            CbTranscribeMode.DisplayMember = "en-CA";
             CbTranscribeMode.FormattingEnabled = true;
-            CbTranscribeMode.Items.AddRange(new object[] { "Continuous Recognition", "Diarization", "Single-Shot" });
             CbTranscribeMode.Location = new Point(231, 192);
             CbTranscribeMode.Name = "CbTranscribeMode";
             CbTranscribeMode.Size = new Size(172, 23);
             CbTranscribeMode.TabIndex = 30;
-            CbTranscribeMode.Text = "Continuous Recognition";
-            CbTranscribeMode.ValueMember = "en-CA";
             // 
             // Imlimages
             // 
